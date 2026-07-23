@@ -89,7 +89,7 @@ export default function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glass-premium p-1 animate-glow-pulse">
               <div className="w-full h-full bg-gradient-to-br from-purple-500/20 via-transparent to-blue-500/20 rounded-full flex items-center justify-center text-gray-400 text-center p-8">
                 <div className="space-y-2">
-                  <p className="text-sm">[Profile Photo]</p>
+                  <p className="text-sm">[profile_pic.jpeg]</p>
                   <p className="text-xs opacity-50">800x800px</p>
                 </div>
               </div>
