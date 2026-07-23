@@ -46,7 +46,7 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a
-                href="/resume.pdf"
+                href={`${import.meta.env.BASE_URL}documents/Adarsh_Vishwakarma_Resume.pdf`}
                 className="btn-secondary flex items-center justify-center gap-2"
               >
                 Download Resume
@@ -85,25 +85,26 @@ export default function Hero() {
             {/* Glow backdrop */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-blue-600/10 rounded-full blur-3xl glow-accent"></div>
 
-            {/* Hero image placeholder with glass effect */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glass-premium p-1 animate-glow-pulse">
-              <div className="w-full h-full bg-gradient-to-br from-purple-500/20 via-transparent to-blue-500/20 rounded-full flex items-center justify-center text-gray-400 text-center p-8">
-                <div className="space-y-2">
-                  <p className="text-sm">[adarsh.jpeg]</p>
-                  <p className="text-xs opacity-50">800x800px</p>
-                </div>
-              </div>
+            {/* Hero profile image with glass effect */}
+            <div className="relative w-80 h-80 md:w-100 md:h-100 rounded-full overflow-hidden glass-premium p-1 animate-glow-pulse">
+              <img
+                src="/images/adarsh.jpeg"
+                alt="Adarsh Vishwakarma"
+                className="w-full h-full object-cover rounded-full"
+                style={{ objectPosition: "center 15%" }}
+
+              />
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" >
         <div className="w-6 h-10 border-2 border-white/20 rounded-full flex items-center justify-center">
           <div className="w-1 h-2 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full animate-pulse"></div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }

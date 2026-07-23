@@ -9,10 +9,13 @@ export default function About() {
           {/* Visual */}
           <div className="relative hidden lg:flex justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-3xl blur-2xl"></div>
-            <div className="relative w-80 h-80 glass-premium p-1">
-              <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl flex items-center justify-center text-gray-500">
-                [About Image]
-              </div>
+
+            <div className="relative w-96 h-96 glass-premium p-1 rounded-3xl overflow-hidden">
+              <img
+                src="/images/about_img.png"
+                alt="Adarsh Vishwakarma working on laptop"
+                className="w-full h-full object-cover rounded-3xl"
+              />
             </div>
           </div>
 
@@ -25,15 +28,15 @@ export default function About() {
 
             <div className="glass-card p-8 space-y-4">
               <p className="text-gray-300 leading-relaxed text-lg">
-                I'm a passionate web developer dedicated to crafting beautiful, functional, and responsive applications. My journey began with curiosity about how the web works, which evolved into a deep love for building elegant digital solutions.
+                I’m a B.Sc. Information Technology student and an aspiring AI & Data Science professional with a strong interest in building practical, technology-driven solutions. My core career focus is Artificial Intelligence, Machine Learning, and Data Science, while I actively develop my technical foundation through software development, databases, data analytics, and modern web technologies.
               </p>
 
               <p className="text-gray-300 leading-relaxed text-lg">
-                I specialize in React and modern web technologies, but I'm constantly exploring new frameworks and tools. My goal is to create software that solves real problems while delivering an exceptional user experience.
+                I have hands-on experience building and deploying web applications using technologies such as React, JavaScript, HTML, CSS, SQL, GitHub, and cloud deployment platforms. I also work with data analysis and visualization tools including Power BI and Advanced Excel, and I am continuously developing my skills in Python, AI/ML, and Data Science.
               </p>
 
               <p className="text-gray-300 leading-relaxed text-lg">
-                When I'm not coding, I'm exploring AI applications, contributing to open-source projects, and learning from the amazing developer community.
+                I believe in learning by building real projects. I enjoy transforming ideas into functional applications, experimenting with AI-powered solutions, working with data, and exploring new technologies. My long-term goal is to build a career in AI and Data Science, where I can combine software development, analytical thinking, and artificial intelligence to solve meaningful real-world problems.
               </p>
             </div>
 

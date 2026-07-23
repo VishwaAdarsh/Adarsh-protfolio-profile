@@ -1,12 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Documents from "./components/Documents";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
+import Gallery from "@/components/Gallery";
 import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
 
 function App() {
   return (
@@ -16,11 +19,14 @@ function App() {
       <main className="flex flex-col">
         <Hero />
         <About />
+        <Documents />
         <Skills />
         <Projects />
         <Experience />
+        <Gallery />
         <Resume />
         <Contact />
+
       </main>
 
       <Footer />

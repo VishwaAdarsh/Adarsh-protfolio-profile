@@ -1,4 +1,4 @@
-import { Code2, Database, Server, Palette, Smartphone, Cloud } from "lucide-react";
+import { Code2, Database, Server, Palette, Smartphone, Cloud, Bot } from "lucide-react";
 
 const skillsGroups = [
   {
@@ -9,12 +9,12 @@ const skillsGroups = [
   {
     category: "Backend",
     icon: Server,
-    items: ["Node.js", "Express", "Python", "REST APIs", "Authentication", "Data Validation"]
+    items: ["Node.js", "Express", "Python", "REST APIs", "MySQL", "Data Validation"]
   },
   {
-    category: "Tools & Platforms",
-    icon: Cloud,
-    items: ["Git", "GitHub", "Vercel", "Netlify", "Docker", "VS Code"]
+    category: " AI Tools & Platforms",
+    icon: Bot,
+    items: ["Gen AI", "Automation", "GitHub", "Vercel", "Netlify", "Antigravity", "SQL Server Studio"]
   }
 ];
 
