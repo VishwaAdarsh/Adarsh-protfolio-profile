@@ -20,11 +20,11 @@ export default function Resume() {
             </p>
 
             <a
-              href="documents/Adarsh_Vishwakaram_Resume.pdf"
-              download
-              className="btn-primary glow-button inline-flex items-center justify-center gap-2 group"
+              href={`${import.meta.env.BASE_URL}documents/Adarsh_Vishwakarma_Resume.pdf`}
+              download="Adarsh_Vishwakarma_Resume.pdf"
+              className="btn-primary glow-button inline-flex items-center justify-center gap-2"
             >
-              <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Download className="w-5 h-5" />
               Download Resume (PDF)
             </a>
           </div>
