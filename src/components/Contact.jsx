@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight, Instagram, Twitter } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -30,7 +30,7 @@ export default function Contact() {
         {/* Social Icons */}
         <div className="glass-premium p-8 space-y-6">
           <p className="text-gray-400">Or find me on social media</p>
-          
+
           <div className="flex justify-center gap-6">
             <a
               href="https://github.com/VishwaAdarsh"
@@ -39,7 +39,16 @@ export default function Contact() {
               className="glass-card p-4 hover:glow-button group transition-all duration-300"
               aria-label="GitHub"
             >
-              <Github className="w-6 h-6 text-gray-300 group-hover:text-purple-400 group-hover:scale-110 transition-all" />
+              <Github className="w-6 h-6 text-gray-300 group-hover:text-white-400 group-hover:scale-110 transition-all" />
+            </a>
+            <a
+              href="https://www.instagram.com/vishwa.adarsh?igsh=dGJ3ZnM0bHA3Mjkw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card p-4 hover:glow-button group transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6 text-gray-300 group-hover:text-red-400 group-hover:scale-110 transition-all" />
             </a>
             <a
               href="https://www.linkedin.com/in/vishwakarma-adarsh-b08566387"
@@ -49,6 +58,15 @@ export default function Contact() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6 text-gray-300 group-hover:text-blue-400 group-hover:scale-110 transition-all" />
+            </a>
+            <a
+              href="https://x.com/Vishwa_adars"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card p-4 hover:glow-button group transition-all duration-300"
+              aria-label="Twitter"
+            >
+              <Twitter className="w-6 h-6 text-gray-300 group-hover:text-purple-400 group-hover:scale-110 transition-all" />
             </a>
           </div>
 

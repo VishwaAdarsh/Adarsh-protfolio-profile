@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Education from "@/components/Education";
 import Documents from "./components/Documents";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -19,6 +20,7 @@ function App() {
       <main className="flex flex-col">
         <Hero />
         <About />
+        <Education />
         <Documents />
         <Skills />
         <Projects />
