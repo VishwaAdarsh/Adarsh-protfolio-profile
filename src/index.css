@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --primary: 147 51% 48%;
+    --primary-foreground: 240 10% 3.9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 280 85% 65%;
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 62.8% 30.6%;
+    --border: 240 3.7% 15.9%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* ===== GLASS CARDS ===== */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-300;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .glass-card:hover {
+    @apply bg-white/10 border-white/20 shadow-xl;
+    box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.25);
+  }
+
+  .glass-premium {
+    @apply bg-black/30 backdrop-blur-2xl border border-white/5 rounded-3xl shadow-2xl transition-all duration-300;
+  }
+
+  .glass-premium:hover {
+    @apply bg-black/40 border-white/10;
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+  }
+
+  /* ===== GLOW EFFECTS ===== */
+  .glow-button {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .glow-button:hover {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.3);
+  }
+
+  .glow-text {
+    @apply drop-shadow-[0_0_20px_rgba(139,92,246,0.3)];
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
+  }
+
+  /* ===== GRADIENT TEXT ===== */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-alt {
+    @apply bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  /* ===== SECTION STYLING ===== */
+  .section {
+    @apply py-20 md:py-32 relative;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply shadow-xl transform -translate-y-0.5;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-white/10 border border-white/20 rounded-lg font-semibold backdrop-blur-sm transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-white/20 border-white/30;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+    }
+  }
+
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline-item {
+    @apply relative pl-8 pb-8 before:absolute before:left-0 before:top-2 before:w-4 before:h-4 before:rounded-full before:bg-gradient-to-r before:from-purple-500 before:to-blue-500 before:shadow-lg before:transition-all before:duration-300;
+  }
+
+  .timeline-item:hover::before {
+    @apply before:scale-125 before:shadow-xl;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  }
+
+  .timeline-item:not(:last-child)::after {
+    @apply absolute left-1.5 top-6 w-1 h-12 bg-gradient-to-b from-purple-500/50 to-transparent content-[''];
+  }
+
+  /* ===== UTILITY ===== */
+  .overlay-gradient {
+    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950 pointer-events-none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
