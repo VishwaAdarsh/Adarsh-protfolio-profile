@@ -2,31 +2,31 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Dashboard",
-    problem: "Store managers struggle with fragmented tools for tracking analytics, inventory, and orders.",
-    solution: "Built an intuitive dashboard consolidating all operations in one unified interface.",
-    tags: ["React", "Next.js", "Tailwind CSS", "Recharts"],
+    title: "QR-Canvas Studio",
+    problem: "Most online QR code generators provide only basic QR creation with limited customization. Advanced features such as logo embedding, custom shapes, gradients, multiple QR types, and scan validation are often unavailable or restricted.",
+    solution: "A modern QR generation platform that supports 13+ QR types, advanced design customization, logo embedding, scan testing, history management, and high-resolution exports through a clean and responsive interface.",
+    tags: ["React", "FastAPI", "Python", "SQLite", "TailwindCSS"],
     gradient: "from-purple-600 to-indigo-600",
-    liveLink: "#",
-    githubLink: "#"
+    liveLink: "https://qr-canvas-ten.vercel.app/",
+    githubLink: "https://github.com/VishwaAdarsh/QR-Canvas"
   },
   {
-    title: "Social Media App",
-    problem: "Developers work in isolation without seamless ways to collaborate on projects.",
-    solution: "Created a real-time platform enabling chat, code sharing, and collaborative workspaces.",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
+    title: "Attendence system web application",
+    problem: "College events often rely on Excel sheets or manual attendance registers. This makes the process time-consuming, increases the chances of duplicate or missing entries, and makes it difficult to track attendance or generate reports efficiently.",
+    solution: "Built a full-stack web application with separate Member and Admin portals. Members can register their details through a simple interface, while administrators can securely manage participant records, monitor attendance, update information, and maintain all event data from a centralized dashboard.",
+    tags: ["React", "Node.js", "Express", "PostgreSQL", "TailwindCSS", "FastAPI"],
     gradient: "from-blue-600 to-cyan-600",
-    liveLink: "#",
-    githubLink: "#"
+    liveLink: "https://tech-bit-attendence.vercel.app/",
+    githubLink: "https://github.com/VishwaAdarsh/TechBit-Attendence"
   },
   {
-    title: "AI Content Generator",
-    problem: "Content creation bottlenecks slow down marketing and publishing workflows.",
-    solution: "Developed an AI-powered tool generating high-quality blog posts and marketing copy instantly.",
-    tags: ["React", "FastAPI", "OpenAI", "Docker"],
+    title: "Vishwa Solutions",
+    problem: "Many small businesses rely on phone calls, WhatsApp messages, and manual record-keeping to manage customer inquiries. Without a professional online presence, showcasing services, collecting project requests, and organizing customer information becomes difficult.",
+    solution: "Developed a responsive business website for Vishwa Solutions that showcases services, completed projects, and company information while providing an inquiry form for customers. Submitted inquiries are organized in an Excel-based system, allowing business owners to manage customer requests without requiring a dedicated database.",
+    tags: ["HTML5", "CSS3", "JavaScript", "GoogleSheets"],
     gradient: "from-emerald-600 to-teal-600",
-    liveLink: "#",
-    githubLink: "#"
+    liveLink: "https://vishwasolutions.netlify.app/",
+    githubLink: "https://github.com/VishwaAdarsh/Vishwa-Solutions"
   },
   {
     title: " AI Dashboard ",
