@@ -245,7 +245,7 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a
-                href={`${import.meta.env.BASE_URL}documents/Adarsh_Vishwakarma_Resume.pdf`}
+                href={`${import.meta.env.BASE_URL}documents/adarsh resume.pdf`}
                 className="btn-secondary flex items-center justify-center gap-2"
               >
                 Download Resume
