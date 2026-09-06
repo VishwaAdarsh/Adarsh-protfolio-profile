@@ -20,7 +20,7 @@ export default function Resume() {
             </p>
 
             <a
-              href={`${import.meta.env.BASE_URL}documents/adarsh resume .pdf`}
+              href={`${import.meta.env.BASE_URL}documents/adarsh resume.pdf`}
               download="Adarsh_Vishwakarma_Resume.pdf"
               className="btn-primary glow-button inline-flex items-center justify-center gap-2"
             >
