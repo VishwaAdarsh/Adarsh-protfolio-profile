@@ -2,10 +2,10 @@ import { Award, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
-    title: "Prompt Master Competition Winner",
+    title: "Prompt Master Participant",
     issuer: "Google Student Ambassador",
     date: "2025",
-    type: "Competition",
+    type: "Participation",
     description: "Won competitive prompt engineering challenge demonstrating AI proficiency",
     link: "/documents/Google Certificate_Adarsh Vishwakarma.pdf"
   },
@@ -32,6 +32,15 @@ const experiences = [
     type: "Participation",
     description: "Competed in technical essay writing demonstrating communication skills",
     link: "/documents/Google certificate essay writing.pdf"
+  },
+
+  {
+    title: "Ai tool workshop",
+    issuer: "be10x",
+    date: "2026",
+    type: "Completion",
+    description: "Competed Ai tool workshop organized by Be10x for learning Ai tools to become productive.",
+    link: "/documents/Certificate.pdf"
   }
 ];
 
