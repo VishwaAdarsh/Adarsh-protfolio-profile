@@ -28,15 +28,15 @@ const projects = [
     liveLink: "https://vishwasolutions.netlify.app/",
     githubLink: "https://github.com/VishwaAdarsh/Vishwa-Solutions"
   },
-  {
-    title: " E-commerce website ",
-    problem: "Content creation bottlenecks slow down marketing and publishing workflows.",
-    solution: "Developed an AI-powered tool generating high-quality blog posts and marketing copy instantly.",
-    tags: ["Nextjs", "RestAPI", "OpenAI", "Docker"],
-    gradient: "from-emerald-600 to-teal-600",
-    liveLink: "#",
-    githubLink: "#"
-  }
+ {
+  title: "E-commerce Website",
+  problem: "Traditional e-commerce experiences can become difficult to navigate, manage, and scale while providing customers with a seamless shopping journey.",
+  solution: "Built a full-stack e-commerce platform with product discovery, secure authentication, cart and checkout workflows, order management, customer accounts, reviews, and an admin control system for managing products, inventory, customers, and orders.",
+  tags: ["Next.js", "React", "Supabase", "REST API"],
+  gradient: "from-emerald-600 to-teal-600",
+  liveLink: "https://e-commerce-website-bay-eight.vercel.app/",
+  githubLink: "https://github.com/VishwaAdarsh/E-commerce-website.git"
+}
 ];
 
 export default function Projects() {
