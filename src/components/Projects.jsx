@@ -29,10 +29,10 @@ const projects = [
     githubLink: "https://github.com/VishwaAdarsh/Vishwa-Solutions"
   },
   {
-    title: " AI Dashboard ",
+    title: " E-commerce website ",
     problem: "Content creation bottlenecks slow down marketing and publishing workflows.",
     solution: "Developed an AI-powered tool generating high-quality blog posts and marketing copy instantly.",
-    tags: ["React", "FastAPI", "OpenAI", "Docker"],
+    tags: ["Nextjs", "RestAPI", "OpenAI", "Docker"],
     gradient: "from-emerald-600 to-teal-600",
     liveLink: "#",
     githubLink: "#"
