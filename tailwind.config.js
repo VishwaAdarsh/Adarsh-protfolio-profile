@@ -8,7 +8,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'sans-serif']
+                sans: ['Inter', 'sans-serif'],
+                heading: ['"Space Grotesk"', 'sans-serif'],
+                mono: ['"JetBrains Mono"', 'monospace'],
             },
             borderRadius: {
                 lg: 'var(--radius)',
@@ -16,6 +18,26 @@ export default {
                 sm: 'calc(var(--radius) - 4px)'
             },
             colors: {
+                universe: {
+                    bg: '#070B17',
+                    secondary: '#0D1428',
+                    surface: '#121B31',
+                    surfaceLight: 'rgba(18, 27, 49, 0.75)',
+                    surfaceHover: '#182442',
+                    border: 'rgba(139, 92, 246, 0.2)',
+                },
+                cyber: {
+                    blue: '#2563FF',
+                    brightBlue: '#4169E1',
+                    cyan: '#00D9FF',
+                    violet: '#8B5CF6',
+                    purple: '#B794F6',
+                },
+                paletteText: {
+                    primary: '#FFFFFF',
+                    secondary: '#A1A9BA',
+                    muted: '#64748B',
+                },
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {
@@ -49,17 +71,13 @@ export default {
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
                 ring: 'hsl(var(--ring))',
-                chart: {
-                    '1': 'hsl(var(--chart-1))',
-                    '2': 'hsl(var(--chart-2))',
-                    '3': 'hsl(var(--chart-3))',
-                    '4': 'hsl(var(--chart-4))',
-                    '5': 'hsl(var(--chart-5))'
-                }
             },
             animation: {
                 "blob": "blob 10s infinite",
                 "shimmer": "shimmer 2s linear infinite",
+                "float-slow": "floatSlow 8s ease-in-out infinite",
+                "float-reverse": "floatReverse 10s ease-in-out infinite",
+                "spin-slow": "spinUltraSlow 45s linear infinite",
             },
             keyframes: {
                 blob: {
@@ -67,10 +85,10 @@ export default {
                         transform: "translate(0px, 0px) scale(1)",
                     },
                     "33%": {
-                        transform: "translate(30px, -50px) scale(1.1)",
+                        transform: "translate(25px, -35px) scale(1.05)",
                     },
                     "66%": {
-                        transform: "translate(-20px, 20px) scale(0.9)",
+                        transform: "translate(-15px, 15px) scale(0.95)",
                     },
                     "100%": {
                         transform: "translate(0px, 0px) scale(1)",
@@ -83,6 +101,18 @@ export default {
                     to: {
                         backgroundPosition: "-200% 0"
                     }
+                },
+                floatSlow: {
+                    "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+                    "50%": { transform: "translateY(-8px) rotate(1deg)" }
+                },
+                floatReverse: {
+                    "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+                    "50%": { transform: "translateY(8px) rotate(-1deg)" }
+                },
+                spinUltraSlow: {
+                    from: { transform: "rotate(0deg)" },
+                    to: { transform: "rotate(360deg)" }
                 }
             }
         }

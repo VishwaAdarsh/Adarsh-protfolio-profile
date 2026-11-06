@@ -3,31 +3,56 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/adarsh1.png" />
+  <link rel="icon" type="image/png" href="./adarsh1.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#030712" />
-  <title>Adarsh Vishwakarma | Developer & AI Enthusiast</title>
-  <meta name="description" content="Portfolio of Adarsh Vishwakarma — B.Sc. IT student, Full-Stack Developer, and AI Generalist building modern web applications, data tools, and AI solutions." />
-  <meta name="keywords" content="Adarsh Vishwakarma, Portfolio, Full-Stack Developer, React, Vite, Tailwind CSS, Python, FastAPI, AI, Machine Learning" />
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Security Headers -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+  <!-- Single Page App URL restoration for static hosts (GitHub Pages) -->
+  <script type="text/javascript">
+    (function(l) {
+      if (l.search[1] === 'p' && l.search[2] === '=') {
+        var queryParams = new URLSearchParams(l.search);
+        var decodedPath = queryParams.get('p') || '';
+        var searchParams = queryParams.get('q');
+        var newUrl = l.pathname + (decodedPath ? (decodedPath.startsWith('/') ? decodedPath.slice(1) : decodedPath) : '') +
+          (searchParams ? '?' + decodeURIComponent(searchParams) : '') +
+          l.hash;
+        window.history.replaceState(null, null, newUrl);
+      }
+    }(window.location));
+  </script>
+
+  <title>ADARSH.V | Digital Universe — Software Developer & AI Enthusiast</title>
+  <meta name="description" content="ADARSH.V — Enter the Digital Universe. Portfolio of Adarsh Vishwakarma: Software Developer, AI Enthusiast, and Technology Creator building digital experiences and intelligent applications." />
+  <meta name="keywords" content="Adarsh Vishwakarma, ADARSH.V, 3D Portfolio, Full-Stack Developer, React, Three.js, AI Generalist, Software Engineer, Mumbai" />
   <meta name="author" content="Adarsh Vishwakarma" />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://VishwaAdarsh.github.io/adarsh-portfolio" />
-  <meta property="og:title" content="Adarsh Vishwakarma | Developer & AI Enthusiast" />
-  <meta property="og:description" content="Explore projects, skills, and certifications of Adarsh Vishwakarma, full-stack developer and AI generalist." />
-  <meta property="og:image" content="/adarsh1.png" />
+  <meta property="og:title" content="ADARSH.V | Digital Universe" />
+  <meta property="og:description" content="Building Digital Experiences. Exploring Intelligent Technology. Turning Ideas Into Reality." />
+  <meta property="og:image" content="https://VishwaAdarsh.github.io/adarsh-portfolio/adarsh1.png" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Adarsh Vishwakarma | Developer & AI Enthusiast" />
-  <meta name="twitter:description" content="Explore projects, skills, and certifications of Adarsh Vishwakarma, full-stack developer and AI generalist." />
-  <meta name="twitter:image" content="/adarsh1.png" />
+  <meta name="twitter:title" content="ADARSH.V | Digital Universe" />
+  <meta name="twitter:description" content="Building Digital Experiences. Exploring Intelligent Technology. Turning Ideas Into Reality." />
+  <meta name="twitter:image" content="https://VishwaAdarsh.github.io/adarsh-portfolio/adarsh1.png" />
 </head>
 
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <script type="module" src="./src/main.jsx"></script>
 </body>
 
 </html>
