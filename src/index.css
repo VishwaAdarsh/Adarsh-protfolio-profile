@@ -4,6 +4,25 @@
 
 @layer base {
   :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
@@ -15,18 +34,23 @@
     --accent: 280 85% 65%;
     --accent-foreground: 240 10% 3.9%;
     --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
-    --radius: 0.75rem;
+    --input: 240 3.7% 15.9%;
+    --ring: 280 85% 65%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 
   h1, h2, h3 {
@@ -37,21 +61,34 @@
 @layer components {
   /* ===== GLASS CARDS ===== */
   .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-300;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    @apply bg-white/80 dark:bg-white/5 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 rounded-2xl transition-all duration-300;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
   }
 
   .glass-card:hover {
-    @apply bg-white/10 border-white/20 shadow-xl;
+    @apply bg-white dark:bg-white/10 border-purple-400/50 dark:border-white/20;
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+  }
+
+  .dark .glass-card {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .dark .glass-card:hover {
     box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.25);
   }
 
   .glass-premium {
-    @apply bg-black/30 backdrop-blur-2xl border border-white/5 rounded-3xl shadow-2xl transition-all duration-300;
+    @apply bg-white/90 dark:bg-black/30 backdrop-blur-2xl border border-slate-200 dark:border-white/5 rounded-3xl transition-all duration-300;
+    box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.07);
   }
 
   .glass-premium:hover {
-    @apply bg-black/40 border-white/10;
+    @apply bg-white dark:bg-black/40 border-purple-400/50 dark:border-white/10;
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);
+  }
+
+  .dark .glass-premium:hover {
     box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
   }
 
@@ -61,7 +98,7 @@
   }
 
   .glow-button:hover {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), 0 0 50px rgba(59, 130, 246, 0.2);
   }
 
   .glow-text {
@@ -69,21 +106,21 @@
   }
 
   .glow-accent {
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3), 0 0 60px rgba(59, 130, 246, 0.15);
   }
 
   /* ===== GRADIENT TEXT ===== */
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent;
   }
 
   .gradient-text-alt {
-    @apply bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-500 bg-clip-text text-transparent;
   }
 
   /* ===== SECTION STYLING ===== */
   .section {
-    @apply py-20 md:py-32 relative;
+    @apply py-14 sm:py-20 md:py-28 relative;
   }
 
   .section-container {
@@ -92,27 +129,23 @@
 
   /* ===== BUTTONS ===== */
   .btn-primary {
-    @apply px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold transition-all duration-300;
+    @apply px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold transition-all duration-300 active:scale-[0.98];
   }
 
   .btn-primary:hover {
     @apply shadow-xl transform -translate-y-0.5;
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5), 0 0 50px rgba(59, 130, 246, 0.25);
   }
 
   .btn-secondary {
-    @apply px-8 py-3 bg-white/10 border border-white/20 rounded-lg font-semibold backdrop-blur-sm transition-all duration-300;
-  }
-
-  .btn-secondary:hover {
-    @apply bg-white/20 border-white/30;
+    @apply px-6 sm:px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300/80 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/20 rounded-lg font-semibold backdrop-blur-sm transition-all duration-300 active:scale-[0.98];
   }
 
   /* ===== ANIMATIONS ===== */
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(16px);
     }
     to {
       opacity: 1;
@@ -122,10 +155,10 @@
 
   @keyframes glow-pulse {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
     }
     50% {
-      box-shadow: 0 0 40px rgba(139, 92, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 0 35px rgba(139, 92, 246, 0.4), 0 0 50px rgba(59, 130, 246, 0.2);
     }
   }
 
@@ -134,54 +167,49 @@
       transform: translate(0, 0) scale(1);
     }
     33% {
-      transform: translate(30px, -50px) scale(1.1);
+      transform: translate(25px, -35px) scale(1.05);
     }
     66% {
-      transform: translate(-20px, 20px) scale(0.9);
+      transform: translate(-15px, 15px) scale(0.95);
     }
   }
 
   .animate-fadeInUp {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.5s ease-out;
   }
 
   .animate-blob {
-    animation: blob 7s infinite;
+    animation: blob 8s infinite;
   }
 
   @keyframes floatSlow {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(2deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
   }
 
   @keyframes floatReverse {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(10px) rotate(-2deg); }
+    50% { transform: translateY(8px) rotate(-1deg); }
   }
 
   @keyframes circuitPulse {
-    0%, 100% { opacity: 0.15; stroke-dashoffset: 60; }
+    0%, 100% { opacity: 0.15; stroke-dashoffset: 40; }
     50% { opacity: 0.45; stroke-dashoffset: 0; }
   }
 
   @keyframes nodeGlow {
     0%, 100% { opacity: 0.2; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.25); }
+    50% { opacity: 0.7; transform: scale(1.2); }
   }
 
   @keyframes floatDiagonal {
     0%, 100% { transform: translate(0px, 0px); }
-    50% { transform: translate(14px, -14px); }
+    50% { transform: translate(10px, -10px); }
   }
 
   @keyframes fadeSlow {
     0%, 100% { opacity: 0.15; }
     50% { opacity: 0.45; }
-  }
-
-  @keyframes spinUltraSlow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
   }
 
   .animate-float-slow {
@@ -198,10 +226,6 @@
 
   .animate-fade-slow {
     animation: fadeSlow 7s ease-in-out infinite;
-  }
-
-  .animate-spin-slow {
-    animation: spinUltraSlow 45s linear infinite;
   }
 
   .animate-circuit-pulse {
@@ -232,7 +256,21 @@
 
   /* ===== UTILITY ===== */
   .overlay-gradient {
-    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950 pointer-events-none;
+    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-100 dark:to-slate-950 pointer-events-none;
+  }
+
+  /* ===== CURSOR GLOW ===== */
+  .cursor-glow {
+    position: fixed;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(59, 130, 246, 0.12) 45%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+  }
+
+  .cursor-glow.active {
+    opacity: 1;
   }
 
   @media (prefers-reduced-motion: reduce) {

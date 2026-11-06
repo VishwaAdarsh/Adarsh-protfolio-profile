@@ -11,7 +11,7 @@ const projects = [
     githubLink: "https://github.com/VishwaAdarsh/QR-Canvas"
   },
   {
-    title: "Attendence system web application",
+    title: "Attendance System Web Application",
     problem: "College events often rely on Excel sheets or manual attendance registers. This makes the process time-consuming, increases the chances of duplicate or missing entries, and makes it difficult to track attendance or generate reports efficiently.",
     solution: "Built a full-stack web application with separate Member and Admin portals. Members can register their details through a simple interface, while administrators can securely manage participant records, monitor attendance, update information, and maintain all event data from a centralized dashboard.",
     tags: ["React", "Node.js", "Express", "PostgreSQL", "TailwindCSS", "FastAPI"],
@@ -28,45 +28,45 @@ const projects = [
     liveLink: "https://vishwasolutions.netlify.app/",
     githubLink: "https://github.com/VishwaAdarsh/Vishwa-Solutions"
   },
- {
-  title: "E-commerce Website",
-  problem: "Traditional e-commerce experiences can become difficult to navigate, manage, and scale while providing customers with a seamless shopping journey.",
-  solution: "Built a full-stack e-commerce platform with product discovery, secure authentication, cart and checkout workflows, order management, customer accounts, reviews, and an admin control system for managing products, inventory, customers, and orders.",
-  tags: ["Next.js", "React", "Supabase", "REST API"],
-  gradient: "from-emerald-600 to-teal-600",
-  liveLink: "https://e-commerce-website-bay-eight.vercel.app/",
-  githubLink: "https://github.com/VishwaAdarsh/E-commerce-website.git"
-}
+  {
+    title: "E-commerce Website",
+    problem: "Traditional e-commerce experiences can become difficult to navigate, manage, and scale while providing customers with a seamless shopping journey.",
+    solution: "Built a full-stack e-commerce platform with product discovery, secure authentication, cart and checkout workflows, order management, customer accounts, reviews, and an admin control system for managing products, inventory, customers, and orders.",
+    tags: ["Next.js", "React", "Supabase", "REST API"],
+    gradient: "from-emerald-600 to-teal-600",
+    liveLink: "https://e-commerce-website-bay-eight.vercel.app/",
+    githubLink: "https://github.com/VishwaAdarsh/E-commerce-website.git"
+  }
 ];
 
 export default function Projects() {
   return (
     <section id="projects" className="section relative overflow-hidden">
       {/* Background blobs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-72 md:w-96 h-72 md:h-96 bg-purple-500/10 dark:bg-purple-600/20 rounded-full blur-2xl md:blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-2xl md:blur-3xl pointer-events-none"></div>
 
       <div className="section-container relative z-10">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-2">Featured Projects</h2>
+        <div className="mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-slate-900 dark:text-white">Featured Projects</h2>
           <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-          <p className="text-gray-400 mt-4 max-w-2xl">
-            A selection of projects that showcase my ability to build elegant solutions
+          <p className="text-slate-600 dark:text-gray-400 mt-3 sm:mt-4 max-w-2xl text-base sm:text-lg">
+            A selection of projects that showcase my ability to build elegant, production-ready solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group glass-premium p-8 overflow-hidden flex flex-col h-full hover:scale-105 transition-transform duration-300"
+              className="group glass-premium p-5 sm:p-7 md:p-8 overflow-hidden flex flex-col h-full hover:scale-[1.01] sm:hover:scale-[1.02] transition-transform duration-300"
             >
               {/* Gradient accent bar */}
-              <div className={`h-1 w-12 bg-gradient-to-r ${project.gradient} rounded-full mb-6 group-hover:w-full transition-all duration-500`}></div>
+              <div className={`h-1 w-12 bg-gradient-to-r ${project.gradient} rounded-full mb-5 group-hover:w-full transition-all duration-500`}></div>
 
               {/* Header */}
-              <div className="mb-6">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2 group-hover:gradient-text transition-all">
+              <div className="mb-5">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-slate-900 dark:text-white group-hover:gradient-text transition-all">
                   {project.title}
                 </h3>
               </div>
@@ -74,29 +74,29 @@ export default function Projects() {
               {/* Problem & Solution */}
               <div className="space-y-4 mb-6 flex-grow">
                 <div>
-                  <p className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-1">
+                  <p className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-widest mb-1.5">
                     Problem
                   </p>
-                  <p className="text-gray-300 leading-relaxed">{project.problem}</p>
+                  <p className="text-slate-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">{project.problem}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-1">
+                  <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-1.5">
                     Solution
                   </p>
-                  <p className="text-gray-300 leading-relaxed">{project.solution}</p>
+                  <p className="text-slate-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">{project.solution}</p>
                 </div>
               </div>
 
               {/* Tech Stack */}
-              <div className="mb-6 py-6 border-t border-white/10">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
+              <div className="mb-6 py-5 border-t border-slate-200 dark:border-white/10">
+                <p className="text-xs font-semibold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2.5">
                   Tech Stack
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300"
+                      className="px-2.5 sm:px-3 py-1 text-xs bg-slate-100 dark:bg-white/5 border border-slate-200/90 dark:border-white/10 rounded-full text-slate-700 dark:text-gray-300 font-medium transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -108,17 +108,21 @@ export default function Projects() {
               <div className="flex gap-3">
                 <a
                   href={project.liveLink}
-                  className="flex-1 btn-primary flex items-center justify-center gap-2 group/btn text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 btn-primary flex items-center justify-center gap-2 text-sm min-h-[44px]"
                 >
-                  <ExternalLink className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-                  Live
+                  <ExternalLink className="w-4 h-4" />
+                  Live Demo
                 </a>
                 <a
                   href={project.githubLink}
-                  className="flex-1 btn-secondary flex items-center justify-center gap-2 group/btn text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 btn-secondary flex items-center justify-center gap-2 text-sm min-h-[44px]"
                 >
-                  <Github className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-                  Code
+                  <Github className="w-4 h-4" />
+                  Source Code
                 </a>
               </div>
             </div>
@@ -126,15 +130,15 @@ export default function Projects() {
         </div>
 
         {/* View All CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 sm:mt-16 text-center">
           <a
             href="https://github.com/VishwaAdarsh"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 btn-secondary group hover:glow-button"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 btn-secondary group hover:glow-button min-h-[44px]"
           >
             Explore More Projects
-            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </a>
         </div>
       </div>

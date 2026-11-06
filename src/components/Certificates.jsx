@@ -39,7 +39,7 @@ const certificates = [
 ];
 
 export default function Certificates() {
-  const [isTimelineView, setIsTimelineView] = useState(true);
+  const [isTimelineView] = useState(true);
 
   if (isTimelineView) {
     return (

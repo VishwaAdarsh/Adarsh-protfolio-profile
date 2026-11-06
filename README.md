@@ -1,16 +1,87 @@
-# React + Vite
+# Adarsh Vishwakarma - Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Modern, responsive developer portfolio showcasing projects in Full-Stack Web Development, Data Analytics, and AI/ML applications.
 
-Currently, two official plugins are available:
+🌐 **Live Website**: [https://VishwaAdarsh.github.io/adarsh-portfolio](https://VishwaAdarsh.github.io/adarsh-portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: [React 18](https://react.dev/), [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [Tailwind Animate](https://github.com/jamiebuilds/tailwindcss-animate)
+- **UI Components & Icons**: [Lucide React](https://lucide.dev/), [Radix UI](https://www.radix-ui.com/)
+- **Deployment**: [GitHub Pages](https://pages.github.com/) via `gh-pages`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features & Highlights
+
+- **Light & Dark Mode**: Persistent theme switcher with system preference detection (`prefers-color-scheme`) and smooth CSS transitions.
+- **Interactive Hero Experience**: Dynamic background with animated SVG neural network circuits, floating tech pills, and subtle cursor parallax.
+- **Project Problem-Solution Storytelling**: Real-world project showcases highlighting business problems, technical solutions, and live/code links.
+- **Curated Experience & Certifications**: Credentials from Google Student Ambassador, Databricks, Outskill, and Be10x.
+- **Verified Documents**: Direct access to verified marksheet records and downloadable resume.
+- **High Performance & Responsive Design**: Optimized assets (< 1 MB total images), mobile-first navigation, and WCAG-compliant reduced motion support.
+
+---
+
+## 🛠️ Local Development
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18.0 or higher recommended)
+- `npm` or `yarn`
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/VishwaAdarsh/Adarsh-protfolio-profile.git
+   cd Adarsh-protfolio-profile
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the local dev server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+5. **Lint the codebase:**
+   ```bash
+   npm run lint
+   ```
+
+---
+
+## 🚢 Deployment
+
+To build and deploy the latest version to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+This runs `npm run build` and publishes the `dist/` directory to the `gh-pages` branch.
+
+---
+
+## 📬 Contact & Socials
+
+- **Email**: [vishwakarma1917adarsh@gmail.com](mailto:vishwakarma1917adarsh@gmail.com)
+- **LinkedIn**: [Adarsh Vishwakarma](https://www.linkedin.com/in/vishwakarma-adarsh-b08566387)
+- **GitHub**: [@VishwaAdarsh](https://github.com/VishwaAdarsh)
+- **Twitter / X**: [@Vishwa_adars](https://x.com/Vishwa_adars)
+
+---
+
+© 2026 Adarsh Vishwakarma. All rights reserved.

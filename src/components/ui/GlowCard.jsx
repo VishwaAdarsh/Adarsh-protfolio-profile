@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 
 export default function GlowCard({ children, className, ...props }) {
@@ -7,6 +7,8 @@ export default function GlowCard({ children, className, ...props }) {
     useEffect(() => {
         const card = cardRef.current;
         if (!card) return;
+        if (typeof window === 'undefined') return;
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
         const handleMouseMove = (e) => {
             const rect = card.getBoundingClientRect();
@@ -17,7 +19,7 @@ export default function GlowCard({ children, className, ...props }) {
             card.style.setProperty("--mouse-y", `${y}px`);
         };
 
-        card.addEventListener("mousemove", handleMouseMove);
+        card.addEventListener("mousemove", handleMouseMove, { passive: true });
         return () => {
             card.removeEventListener("mousemove", handleMouseMove);
         };
@@ -27,7 +29,7 @@ export default function GlowCard({ children, className, ...props }) {
         <div
             ref={cardRef}
             className={cn(
-                "relative rounded-xl border border-white/10 bg-black/40 overflow-hidden group transition-all duration-300",
+                "relative rounded-xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-black/40 shadow-sm dark:shadow-none overflow-hidden group transition-all duration-300",
                 className
             )}
             {...props}
@@ -36,14 +38,14 @@ export default function GlowCard({ children, className, ...props }) {
             <div
                 className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-300"
                 style={{
-                    background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%)`,
+                    background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139,92,246,0.1), transparent 40%)`,
                 }}
             />
             {/* Border Glow */}
             <div
                 className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-500"
                 style={{
-                    background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139, 92, 246, 0.4), transparent 40%)`,
+                    background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139, 92, 246, 0.35), transparent 40%)`,
                     zIndex: -1
                 }}
             />

@@ -2,22 +2,24 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function CursorGlow() {
   const glowRef = useRef(null);
-  const [isPointerDevice, setIsPointerDevice] = useState(true);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    // Check if device supports pointer (exclude touch-only devices)
+    // Only enable on devices with hover and fine pointer (non-touch)
+    if (typeof window === 'undefined') return;
+    const isHoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!isHoverCapable) return;
+
+    setEnabled(true);
+
     const handlePointerMove = (e) => {
       if (!glowRef.current) return;
-
-      // Skip if it's a touch event
       if (e.pointerType === 'touch') {
         glowRef.current.classList.remove('active');
         return;
       }
-
-      const { clientX, clientY } = e;
-      glowRef.current.style.left = clientX + 'px';
-      glowRef.current.style.top = clientY + 'px';
+      glowRef.current.style.left = `${e.clientX}px`;
+      glowRef.current.style.top = `${e.clientY}px`;
       glowRef.current.classList.add('active');
     };
 
@@ -27,24 +29,16 @@ export default function CursorGlow() {
       }
     };
 
-    // Detect touch device
-    const touchHandler = () => {
-      setIsPointerDevice(false);
-    };
-
-    document.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
     document.addEventListener('pointerleave', handlePointerLeave);
-    document.addEventListener('touch', touchHandler);
 
     return () => {
-      document.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointermove', handlePointerMove);
       document.removeEventListener('pointerleave', handlePointerLeave);
-      document.removeEventListener('touch', touchHandler);
     };
   }, []);
 
-  // Don't render on touch devices
-  if (!isPointerDevice) return null;
+  if (!enabled) return null;
 
   return (
     <div

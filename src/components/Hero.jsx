@@ -5,8 +5,10 @@ export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Subtle mouse parallax effect (disabled if reduced motion is preferred)
+    // Only enable subtle mouse parallax on desktop with mouse (not touch/mobile)
+    if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
@@ -15,7 +17,7 @@ export default function Hero() {
       setMousePos({ x: moveX, y: moveY });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
@@ -34,12 +36,12 @@ export default function Hero() {
         }}
       >
         {/* Digital Grid Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#8b5cf6_1px,transparent_1px)] [background-size:36px_36px] opacity-[0.06]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] dark:bg-[radial-gradient(#8b5cf6_1px,transparent_1px)] [background-size:36px_36px] opacity-[0.08] dark:opacity-[0.06]"></div>
 
         {/* Ambient Glowing Gradient Orbs */}
-        <div className="absolute top-0 left-1/4 w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[120px] animate-blob"></div>
-        <div className="absolute top-1/2 right-0 w-[450px] h-[450px] bg-blue-600/15 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-32 left-1/3 w-[450px] h-[450px] bg-indigo-600/10 rounded-full blur-[120px] animate-blob animation-delay-4000"></div>
+        <div className="absolute top-0 left-1/4 w-48 h-48 md:w-[450px] md:h-[450px] bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-2xl md:blur-[100px] animate-blob"></div>
+        <div className="absolute top-1/2 right-0 w-48 h-48 md:w-[450px] md:h-[450px] bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-2xl md:blur-[100px] animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-32 left-1/3 w-48 h-48 md:w-[450px] md:h-[450px] bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-2xl md:blur-[100px] animate-blob animation-delay-4000"></div>
 
         {/* Futuristic SVG Circuit Lines & Neural Network Mesh */}
         <svg className="absolute inset-0 w-full h-full opacity-20 sm:opacity-25" xmlns="http://www.w3.org/2000/svg">
@@ -218,47 +220,49 @@ export default function Hero() {
           <div className="space-y-8 animate-fadeInUp">
             {/* Label */}
             <div>
-              <p className="text-sm font-semibold text-purple-400 tracking-widest uppercase mb-4">
+              <p className="text-xs sm:text-sm font-semibold text-purple-600 dark:text-purple-400 tracking-widest uppercase mb-3 sm:mb-4">
                 Welcome to my portfolio
               </p>
-              <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-4">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3 sm:mb-4 text-slate-900 dark:text-white">
                 Hi, I'm{" "}
                 <span className="gradient-text block">Adarsh Vishwakarma</span>
               </h1>
-              <h2 className="text-2xl md:text-3xl text-gray-300 font-light">
+              <h2 className="text-xl sm:text-2xl md:text-3xl text-slate-600 dark:text-gray-300 font-light">
                 B.ScIT Student | Developer | AI Generalist
               </h2>
             </div>
 
             {/* Value Prop */}
-            <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-gray-300 leading-relaxed max-w-xl">
               I craft premium, responsive web applications with a focus on user experience and clean code. Passionate about building elegant solutions to complex problems.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
               <button
                 onClick={() => scrollToSection("projects")}
-                className="btn-primary glow-button flex items-center justify-center gap-2 group"
+                className="btn-primary glow-button flex items-center justify-center gap-2 group w-full sm:w-auto min-h-[44px]"
               >
                 View My Work
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a
-                href={`${import.meta.env.BASE_URL}documents/adarsh resume.pdf`}
-                className="btn-secondary flex items-center justify-center gap-2"
+                href={`${import.meta.env.BASE_URL}documents/Adarsh_Resume.pdf`}
+                download="Adarsh_Vishwakarma_Resume.pdf"
+                className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px]"
               >
                 Download Resume
               </a>
             </div>
 
             {/* Socials */}
-            <div className="flex items-center gap-6 pt-4">
+            <div className="flex items-center gap-5 sm:gap-6 pt-2 sm:pt-4">
               <a
                 href="https://github.com/VishwaAdarsh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110"
+                className="text-slate-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors transform hover:scale-110 p-1"
+                aria-label="GitHub Profile"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -266,13 +270,15 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/vishwakarma-adarsh-b08566387"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110"
+                className="text-slate-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors transform hover:scale-110 p-1"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
                 href="mailto:vishwakarma1917adarsh@gmail.com"
-                className="text-gray-400 hover:text-purple-400 transition-colors transform hover:scale-110"
+                className="text-slate-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors transform hover:scale-110 p-1"
+                aria-label="Send Email"
               >
                 <Mail className="w-6 h-6" />
               </a>
@@ -299,7 +305,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex items-center justify-center">
+        <div className="w-6 h-10 border-2 border-slate-300 dark:border-white/20 rounded-full flex items-center justify-center">
           <div className="w-1 h-2 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full animate-pulse"></div>
         </div>
       </div>
